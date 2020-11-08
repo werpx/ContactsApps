@@ -6,20 +6,16 @@ using System.Threading.Tasks;
 
 namespace ContactsApps
 {
-    class Project
+   public class Project
     {
         /// <summary>
         /// Список из объектов класса Contact
         /// </summary>
-        private List<IContact> _contactlist;
+        public List<Contact> _contactlist;
 
-        public List<IContact> Contactlist
+        public Project()
         {
-            get { return _contactlist; }
-            set
-            {
-                _contactlist = value;
-            }
+            _contactlist = new List<Contact>(200);
         }
 
     }

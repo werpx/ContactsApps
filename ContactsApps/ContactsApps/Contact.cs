@@ -9,7 +9,7 @@ namespace ContactsApps
     /// <summary>
     /// Класс, содержащий 6 полей: фамилия, имя, номер тел, дата рождения, mail, IDвк
     /// </summary>
-    class IContact
+    public class Contact
     {
         private string _lastname;
         private string _name;
@@ -120,5 +120,6 @@ namespace ContactsApps
                 }
             }
         }
+
     }
 }
