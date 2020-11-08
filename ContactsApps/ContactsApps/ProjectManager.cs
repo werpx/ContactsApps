@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace ContactsApps
 {
-    static class ProjectManager
+    public static class ProjectManager
     {
        public static void  SaveToFile(Project data, string filename)
         {

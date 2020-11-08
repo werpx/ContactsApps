@@ -16,14 +16,9 @@ namespace ContactsAppsUI
     public partial class Main_Form : Form
     {
         public Project project;
-
+        public string filename = @"C:\Users\1\Documents\ContactsApp.txt";
 
         public Main_Form()
-        {
-            
-        }
-
-        private void ClassLoad(object sender, EventArgs e)
         {
             InitializeComponent();
 
@@ -44,9 +39,11 @@ namespace ContactsAppsUI
             textBox2.Text = contact.Name;
 
             project._contactlist.Add(contact);
-            
+            ProjectManager.SaveToFile(project, filename);
+            project = null;
+            ProjectManager.LoadFromFile(filename);
         }
-        
+                    
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
            
