@@ -8,11 +8,23 @@ using Newtonsoft.Json;
 
 namespace ContactsApps
 {
+    /// <summary>
+    /// статичный класс для записи в файл
+    /// </summary>
     public static class ProjectManager
     {
+        /// <summary>
+        /// метод сериализации
+        /// </summary>
+        /// <param name="data">объект класса Project</param>
+        /// <param name="filename">путь к файлу для записи</param>
        public static void  SaveToFile(Project data, string filename)
         {
-            JsonSerializer serializer = new JsonSerializer();
+            JsonSerializer serializer = new JsonSerializer()
+            {
+                Formatting = Formatting.Indented,
+                TypeNameHandling = TypeNameHandling.All
+            };
             using (StreamWriter sw = new StreamWriter(filename))
             using (JsonWriter writer = new JsonTextWriter(sw))
             {
@@ -20,9 +32,18 @@ namespace ContactsApps
             }
 
         }
+        /// <summary>
+        /// метод десериализации
+        /// </summary>
+        /// <param name="filename">путь к файлу</param>
+        /// <returns></returns>
         public static Project LoadFromFile(string filename)
         {
-            JsonSerializer serializer = new JsonSerializer();
+            JsonSerializer serializer = new JsonSerializer()
+            {
+                Formatting = Formatting.Indented,
+                TypeNameHandling = TypeNameHandling.All
+            };
             using (StreamReader sr = new StreamReader(filename))
             using (JsonReader reader = new JsonTextReader(sr))
             {

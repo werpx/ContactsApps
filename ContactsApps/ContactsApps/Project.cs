@@ -17,6 +17,6 @@ namespace ContactsApps
         {
             _contactlist = new List<Contact>(200);
         }
-
+       
     }
 }

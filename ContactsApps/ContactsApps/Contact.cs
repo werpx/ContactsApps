@@ -26,12 +26,12 @@ namespace ContactsApps
             get { return _lastname; }
             set
             {
-         
+
                 if (value.Length > 50)
                 {
                     throw new ArgumentException("максимальное количество символов = 50!");
                 }
-                else 
+                else
                 {
                     {
                         _lastname = value.Substring(0, 1).ToUpper() + value.Substring(1).ToLower();
@@ -121,5 +121,11 @@ namespace ContactsApps
             }
         }
 
+        public override string ToString()
+        {
+            var name = Name;
+            var lastname = Lastname;
+            return name + " " + lastname;
+        }
     }
 }
