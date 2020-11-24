@@ -65,7 +65,7 @@ namespace ContactsAppsUI
 
                 BirthdateDateTimePicker.Text = _selectedContact.Birthdate.ToString();
 
-                PhoneTextBox.Text = _selectedContact.Number.Number;
+                MaskedPhoneTextBox.Text =  _selectedContact.Number.Number.ToString();
 
                 EmailTextBox.Text = _selectedContact.Email;
                 VKidTextBox.Text = _selectedContact.VKid;
@@ -80,22 +80,13 @@ namespace ContactsAppsUI
             NameTextBox.Text = "";
             LastnameTextBox.Text = "";
             BirthdateDateTimePicker.Text = "";
-            PhoneTextBox.Text = "";
+            MaskedPhoneTextBox.Text = "";
             EmailTextBox.Text = "";
             VKidTextBox.Text = "";
         }
         private void ContactsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             RefreshContactInfo();
-        }
-        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void addContackToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Main_Form_Load(object sender, EventArgs e)
@@ -135,11 +126,6 @@ namespace ContactsAppsUI
                 _editForm.Close();
                 RefreshContactInfo();
             }
-        }
-
-        private void editToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void DeleteContactButton_Click(object sender, EventArgs e)
@@ -188,6 +174,11 @@ namespace ContactsAppsUI
                 _formlist = new BindingList<Contact>(ProjectManager.LoadFromFile(fileDialog.FileName)._contactlist);
                 ContactsListBox.DataSource = _formlist;
             }
+        }
+
+        private void saveToToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

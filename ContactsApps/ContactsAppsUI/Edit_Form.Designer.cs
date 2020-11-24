@@ -31,7 +31,6 @@
             this.ContactDataTableLayout = new System.Windows.Forms.TableLayoutPanel();
             this.VKidTextBox = new System.Windows.Forms.TextBox();
             this.EmailTextBox = new System.Windows.Forms.TextBox();
-            this.PhoneTextBox = new System.Windows.Forms.TextBox();
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.LastnameTextBox = new System.Windows.Forms.TextBox();
             this.NameLabel = new System.Windows.Forms.Label();
@@ -43,6 +42,7 @@
             this.BirthdateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.AcceptButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
+            this.MaskedPhoneTextBox = new System.Windows.Forms.MaskedTextBox();
             this.ContactDataTableLayout.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,9 +53,9 @@
             this.ContactDataTableLayout.ColumnCount = 2;
             this.ContactDataTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24F));
             this.ContactDataTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76F));
+            this.ContactDataTableLayout.Controls.Add(this.MaskedPhoneTextBox, 1, 3);
             this.ContactDataTableLayout.Controls.Add(this.VKidTextBox, 1, 5);
             this.ContactDataTableLayout.Controls.Add(this.EmailTextBox, 1, 4);
-            this.ContactDataTableLayout.Controls.Add(this.PhoneTextBox, 1, 3);
             this.ContactDataTableLayout.Controls.Add(this.NameTextBox, 1, 1);
             this.ContactDataTableLayout.Controls.Add(this.LastnameTextBox, 1, 0);
             this.ContactDataTableLayout.Controls.Add(this.NameLabel, 0, 1);
@@ -74,6 +74,7 @@
             this.ContactDataTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66556F));
             this.ContactDataTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66556F));
             this.ContactDataTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66556F));
+            this.ContactDataTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.ContactDataTableLayout.Size = new System.Drawing.Size(460, 201);
             this.ContactDataTableLayout.TabIndex = 9;
             // 
@@ -93,14 +94,6 @@
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(344, 20);
             this.EmailTextBox.TabIndex = 14;
-            // 
-            // PhoneTextBox
-            // 
-            this.PhoneTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.PhoneTextBox.Location = new System.Drawing.Point(113, 105);
-            this.PhoneTextBox.Name = "PhoneTextBox";
-            this.PhoneTextBox.Size = new System.Drawing.Size(344, 20);
-            this.PhoneTextBox.TabIndex = 13;
             // 
             // NameTextBox
             // 
@@ -214,6 +207,15 @@
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
+            // MaskedPhoneTextBox
+            // 
+            this.MaskedPhoneTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.MaskedPhoneTextBox.Location = new System.Drawing.Point(113, 105);
+            this.MaskedPhoneTextBox.Mask = "+70000000000";
+            this.MaskedPhoneTextBox.Name = "MaskedPhoneTextBox";
+            this.MaskedPhoneTextBox.Size = new System.Drawing.Size(344, 20);
+            this.MaskedPhoneTextBox.TabIndex = 14;
+            // 
             // Edit_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,7 +240,6 @@
         private System.Windows.Forms.TableLayoutPanel ContactDataTableLayout;
         private System.Windows.Forms.TextBox VKidTextBox;
         private System.Windows.Forms.TextBox EmailTextBox;
-        private System.Windows.Forms.TextBox PhoneTextBox;
         private System.Windows.Forms.TextBox NameTextBox;
         private System.Windows.Forms.TextBox LastnameTextBox;
         private System.Windows.Forms.Label NameLabel;
@@ -250,5 +251,6 @@
         private System.Windows.Forms.DateTimePicker BirthdateDateTimePicker;
         private System.Windows.Forms.Button AcceptButton;
         private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.MaskedTextBox MaskedPhoneTextBox;
     }
 }

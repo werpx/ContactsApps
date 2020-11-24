@@ -53,7 +53,6 @@
             this.ContactDataTableLayout = new System.Windows.Forms.TableLayoutPanel();
             this.VKidTextBox = new System.Windows.Forms.TextBox();
             this.EmailTextBox = new System.Windows.Forms.TextBox();
-            this.PhoneTextBox = new System.Windows.Forms.TextBox();
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.LastnameTextBox = new System.Windows.Forms.TextBox();
             this.NameLabel = new System.Windows.Forms.Label();
@@ -63,6 +62,7 @@
             this.VKidLabel = new System.Windows.Forms.Label();
             this.LastnameLabel = new System.Windows.Forms.Label();
             this.BirthdateDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.MaskedPhoneTextBox = new System.Windows.Forms.MaskedTextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -99,18 +99,19 @@
             this.saveToToolStripMenuItem.Name = "saveToToolStripMenuItem";
             this.saveToToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.saveToToolStripMenuItem.Text = "Exit";
+            this.saveToToolStripMenuItem.Click += new System.EventHandler(this.saveToToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.loadToolStripMenuItem.Text = "Load";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
@@ -123,26 +124,25 @@
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
-            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // addContackToolStripMenuItem
             // 
             this.addContackToolStripMenuItem.Name = "addContackToolStripMenuItem";
-            this.addContackToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addContackToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.addContackToolStripMenuItem.Text = "Add contact";
             this.addContackToolStripMenuItem.Click += new System.EventHandler(this.AddContactButton_Click);
             // 
             // editContactToolStripMenuItem
             // 
             this.editContactToolStripMenuItem.Name = "editContactToolStripMenuItem";
-            this.editContactToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editContactToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.editContactToolStripMenuItem.Text = "Edit contact";
             this.editContactToolStripMenuItem.Click += new System.EventHandler(this.EditContactButton_Click);
             // 
             // removeContactToolStripMenuItem
             // 
             this.removeContactToolStripMenuItem.Name = "removeContactToolStripMenuItem";
-            this.removeContactToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.removeContactToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.removeContactToolStripMenuItem.Text = "Remove contact";
             // 
             // helpToolStripMenuItem
@@ -156,7 +156,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
@@ -177,7 +177,7 @@
             // EditContactButton
             // 
             this.EditContactButton.Image = ((System.Drawing.Image)(resources.GetObject("EditContactButton.Image")));
-            this.EditContactButton.Location = new System.Drawing.Point(56, 3);
+            this.EditContactButton.Location = new System.Drawing.Point(55, 3);
             this.EditContactButton.Name = "EditContactButton";
             this.EditContactButton.Size = new System.Drawing.Size(37, 30);
             this.EditContactButton.TabIndex = 2;
@@ -187,7 +187,7 @@
             // DeleteContactButton
             // 
             this.DeleteContactButton.Image = ((System.Drawing.Image)(resources.GetObject("DeleteContactButton.Image")));
-            this.DeleteContactButton.Location = new System.Drawing.Point(104, 3);
+            this.DeleteContactButton.Location = new System.Drawing.Point(102, 3);
             this.DeleteContactButton.Name = "DeleteContactButton";
             this.DeleteContactButton.Size = new System.Drawing.Size(32, 30);
             this.DeleteContactButton.TabIndex = 3;
@@ -203,7 +203,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.83019F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.16981F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 42F));
             this.tableLayoutPanel1.Controls.Add(this.AddContactButton, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.EditContactButton, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.DeleteContactButton, 2, 0);
@@ -303,7 +303,6 @@
             this.ContactDataTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75.57841F));
             this.ContactDataTableLayout.Controls.Add(this.VKidTextBox, 1, 5);
             this.ContactDataTableLayout.Controls.Add(this.EmailTextBox, 1, 4);
-            this.ContactDataTableLayout.Controls.Add(this.PhoneTextBox, 1, 3);
             this.ContactDataTableLayout.Controls.Add(this.NameTextBox, 1, 1);
             this.ContactDataTableLayout.Controls.Add(this.LastnameTextBox, 1, 0);
             this.ContactDataTableLayout.Controls.Add(this.NameLabel, 0, 1);
@@ -313,6 +312,7 @@
             this.ContactDataTableLayout.Controls.Add(this.VKidLabel, 0, 5);
             this.ContactDataTableLayout.Controls.Add(this.LastnameLabel, 0, 0);
             this.ContactDataTableLayout.Controls.Add(this.BirthdateDateTimePicker, 1, 2);
+            this.ContactDataTableLayout.Controls.Add(this.MaskedPhoneTextBox, 1, 3);
             this.ContactDataTableLayout.Location = new System.Drawing.Point(296, 0);
             this.ContactDataTableLayout.Name = "ContactDataTableLayout";
             this.ContactDataTableLayout.RowCount = 6;
@@ -340,14 +340,6 @@
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(346, 20);
             this.EmailTextBox.TabIndex = 14;
-            // 
-            // PhoneTextBox
-            // 
-            this.PhoneTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.PhoneTextBox.Location = new System.Drawing.Point(116, 168);
-            this.PhoneTextBox.Name = "PhoneTextBox";
-            this.PhoneTextBox.Size = new System.Drawing.Size(346, 20);
-            this.PhoneTextBox.TabIndex = 13;
             // 
             // NameTextBox
             // 
@@ -439,6 +431,15 @@
             this.BirthdateDateTimePicker.Size = new System.Drawing.Size(154, 20);
             this.BirthdateDateTimePicker.TabIndex = 16;
             // 
+            // MaskedPhoneTextBox
+            // 
+            this.MaskedPhoneTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.MaskedPhoneTextBox.Location = new System.Drawing.Point(116, 168);
+            this.MaskedPhoneTextBox.Mask = "70000000000";
+            this.MaskedPhoneTextBox.Name = "MaskedPhoneTextBox";
+            this.MaskedPhoneTextBox.Size = new System.Drawing.Size(346, 20);
+            this.MaskedPhoneTextBox.TabIndex = 9;
+            // 
             // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -497,13 +498,13 @@
         private System.Windows.Forms.Label LastnameLabel;
         private System.Windows.Forms.TextBox VKidTextBox;
         private System.Windows.Forms.TextBox EmailTextBox;
-        private System.Windows.Forms.TextBox PhoneTextBox;
         private System.Windows.Forms.TextBox NameTextBox;
         private System.Windows.Forms.TextBox LastnameTextBox;
         private System.Windows.Forms.DateTimePicker BirthdateDateTimePicker;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
+        private System.Windows.Forms.MaskedTextBox MaskedPhoneTextBox;
     }
 }
 

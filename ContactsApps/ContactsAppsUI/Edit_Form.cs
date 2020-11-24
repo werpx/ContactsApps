@@ -23,16 +23,11 @@ namespace ContactsAppsUI
         {
             if (_current != null)
             {
-               
-                var name = _current.Name;
-                var lastname = _current.Lastname;
-
-                NameTextBox.Text = name;
-                LastnameTextBox.Text = lastname ;
+                NameTextBox.Text = _current.Name; 
+                LastnameTextBox.Text = _current.Lastname;
 
                 BirthdateDateTimePicker.Text = _current.Birthdate.ToString();
-
-                PhoneTextBox.Text = _current.Number.Number;
+                MaskedPhoneTextBox.Text = _current.Number.Number.ToString();
 
                 EmailTextBox.Text = _current.Email;
                 VKidTextBox.Text = _current.VKid;
@@ -50,7 +45,7 @@ namespace ContactsAppsUI
                 _current.Name = NameTextBox.Text;
                 _current.Lastname = LastnameTextBox.Text;
                 _current.Birthdate = BirthdateDateTimePicker.Value;
-                _current.Number.Number = PhoneTextBox.Text;
+                _current.Number.Number = Convert.ToInt64(MaskedPhoneTextBox.Text);
                 _current.Email = EmailTextBox.Text;
                 _current.VKid = VKidTextBox.Text;
                 this.DialogResult = DialogResult.OK;

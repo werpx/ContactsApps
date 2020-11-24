@@ -12,29 +12,26 @@ namespace ContactsApps
     /// </summary>
     public class Phone 
     {
-        private string _number;
-        public string Number
+        private long _number;
+        public long Number
         {
             get { return _number; }
             set
             {
-                if (value.Length != 11)
-                {
-                    throw new ArgumentException("Номер телефона должен содержать 11 цифр");
-                }
+                //if (value != 11)
+                //{
+                //    throw new ArgumentException("Номер телефона должен содержать 11 цифр");
+                //}
                 
-                else if (value.Substring(0, 1) != "7")
-                {
-                    throw new ArgumentException("Номер телефона должен начинаться с 7 ");
-                }
+                //else if (value.Substring(0, 1) != "7")
+                //{
+                //    throw new ArgumentException("Номер телефона должен начинаться с 7 ");
+                //}
                 
                     _number = value;
             }
         }
-        public Phone()
-        {
-            _number = "";
-        }
+       
     }
 
 }
