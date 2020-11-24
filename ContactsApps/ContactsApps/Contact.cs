@@ -53,9 +53,9 @@ namespace ContactsApps
                 }
                 else
                 {
-                    {
+                    
                         _name = value.Substring(0, 1).ToUpper() + value.Substring(1).ToLower();
-                    }
+                    
                 }
             }
         }

@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsApps", "ContactsApp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "console", "console\console.csproj", "{3BABE563-2601-4948-B8E6-B0CF70F6A6F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsAppUnitTests", "ContactsAppUnitTests\ContactsAppUnitTests.csproj", "{8FEA250F-BB45-4CF4-9C32-1209E968E5A7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsApp.UnitTests", "ContactsApp.UnitTests\ContactsApp.UnitTests.csproj", "{90EAC527-A4DB-4A6C-BA3A-F7F34758A02F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{3BABE563-2601-4948-B8E6-B0CF70F6A6F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BABE563-2601-4948-B8E6-B0CF70F6A6F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BABE563-2601-4948-B8E6-B0CF70F6A6F4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8FEA250F-BB45-4CF4-9C32-1209E968E5A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8FEA250F-BB45-4CF4-9C32-1209E968E5A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8FEA250F-BB45-4CF4-9C32-1209E968E5A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8FEA250F-BB45-4CF4-9C32-1209E968E5A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90EAC527-A4DB-4A6C-BA3A-F7F34758A02F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90EAC527-A4DB-4A6C-BA3A-F7F34758A02F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90EAC527-A4DB-4A6C-BA3A-F7F34758A02F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90EAC527-A4DB-4A6C-BA3A-F7F34758A02F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

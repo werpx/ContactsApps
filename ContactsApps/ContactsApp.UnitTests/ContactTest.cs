@@ -30,7 +30,7 @@ namespace ContactsAppUnitTests
             var expected = "СмиРНов";
             _contact.Lastname = expected;
             var actual = "Смирнов";
-            Assert.AreEqual(expected, actual, "Фамилия должна начинаться с буквы верхнего регистра, все остальные буквы должны быть нижнего регистра");
+            Assert.AreEqual(_contact.Lastname, actual, "Фамилия должна начинаться с буквы верхнего регистра, все остальные буквы должны быть нижнего регистра");
         }
 
         [Test(Description = "Негативный тест сеттера Lastname")]
@@ -46,8 +46,8 @@ namespace ContactsAppUnitTests
         public void TestNameGet_CorrectValue()
         {
             var expected = "Имя";
-            _contact.Lastname = expected;
-            var actual = _contact.Lastname;
+            _contact.Name = expected;
+            var actual = _contact.Name;
             Assert.AreEqual(expected, actual, "Геттер Name возвращает неправильное имя");
         }
 
@@ -57,13 +57,13 @@ namespace ContactsAppUnitTests
             var expected = "ИМЯ";
             _contact.Name = expected;
             var actual = "Имя";
-            Assert.AreEqual(expected, actual, "Имя должно начинаться с буквы верхнего регистра, все остальные буквы должны быть нижнего регистра");
+            Assert.AreEqual(_contact.Name, actual, "Имя должно начинаться с буквы верхнего регистра, все остальные буквы должны быть нижнего регистра");
         }
 
         [Test(Description = "Негативный тест сеттера Name")]
         public void TestNameSet_UnCorrectValue()
         {
-            var wrongname = "имяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяя";
+            string wrongname = "имяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяя";
             _contact.Name = wrongname;
             Assert.Throws<ArgumentException>(() => { _contact.Name = wrongname; }, "должно возникать исключение, если имя длиннее 50 символов");
         }
@@ -148,8 +148,8 @@ namespace ContactsAppUnitTests
         public void TestEmailSet_UnCorrectValue()
         {
             var wrongemail = "kek@mail.ruuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu";
-            _contact.Name = wrongemail;
-            Assert.Throws<ArgumentException>(() => { _contact.Name = wrongemail; }, "должно возникать исключение, если почта длиннее 50 символов");
+            _contact.Email = wrongemail;
+            Assert.Throws<ArgumentException>(() => { _contact.Email = wrongemail; }, "должно возникать исключение, если почта длиннее 50 символов");
         }
         /*====================================================================================================*/
         /*====================================================================================================*/
@@ -166,7 +166,7 @@ namespace ContactsAppUnitTests
         public void TestVKidSet_CorrectValue()
         {
             var expected = "123";
-            _contact.Email = expected;
+            _contact.VKid = expected;
             var actual = "123";
             Assert.AreEqual(expected, actual, "вк-айди введен неправильно");
         }
@@ -175,8 +175,8 @@ namespace ContactsAppUnitTests
         public void TestVKidSet_UnCorrectValue()
         {
             var wrongevkid = "123123123123123123123123123123123123";
-            _contact.Name = wrongevkid;
-            Assert.Throws<ArgumentException>(() => { _contact.Name = wrongevkid; }, "должно возникать исключение, если вк-айди длиннее 15 символов");
+            _contact.VKid = wrongevkid;
+            Assert.Throws<ArgumentException>(() => { _contact.VKid = wrongevkid; }, "должно возникать исключение, если вк-айди длиннее 15 символов");
         }
     }
 }

@@ -177,7 +177,7 @@
             // EditContactButton
             // 
             this.EditContactButton.Image = ((System.Drawing.Image)(resources.GetObject("EditContactButton.Image")));
-            this.EditContactButton.Location = new System.Drawing.Point(55, 3);
+            this.EditContactButton.Location = new System.Drawing.Point(54, 3);
             this.EditContactButton.Name = "EditContactButton";
             this.EditContactButton.Size = new System.Drawing.Size(37, 30);
             this.EditContactButton.TabIndex = 2;
@@ -187,7 +187,7 @@
             // DeleteContactButton
             // 
             this.DeleteContactButton.Image = ((System.Drawing.Image)(resources.GetObject("DeleteContactButton.Image")));
-            this.DeleteContactButton.Location = new System.Drawing.Point(102, 3);
+            this.DeleteContactButton.Location = new System.Drawing.Point(100, 3);
             this.DeleteContactButton.Name = "DeleteContactButton";
             this.DeleteContactButton.Size = new System.Drawing.Size(32, 30);
             this.DeleteContactButton.TabIndex = 3;
@@ -203,7 +203,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.83019F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.16981F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 44F));
             this.tableLayoutPanel1.Controls.Add(this.AddContactButton, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.EditContactButton, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.DeleteContactButton, 2, 0);
@@ -282,8 +282,8 @@
             this.LefthalfTableLayout.ColumnCount = 1;
             this.LefthalfTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.LefthalfTableLayout.Controls.Add(this.tableLayoutPanel2, 0, 1);
-            this.LefthalfTableLayout.Controls.Add(this.tableLayoutPanel1, 0, 2);
             this.LefthalfTableLayout.Controls.Add(this.tableLayoutPanel3, 0, 0);
+            this.LefthalfTableLayout.Controls.Add(this.tableLayoutPanel1, 0, 2);
             this.LefthalfTableLayout.Location = new System.Drawing.Point(12, 27);
             this.LefthalfTableLayout.Name = "LefthalfTableLayout";
             this.LefthalfTableLayout.RowCount = 3;
@@ -343,8 +343,7 @@
             // 
             // NameTextBox
             // 
-            this.NameTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.NameTextBox.Location = new System.Drawing.Point(116, 66);
+            this.NameTextBox.Location = new System.Drawing.Point(116, 54);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(346, 20);
             this.NameTextBox.TabIndex = 11;
@@ -449,7 +448,7 @@
             this.Controls.Add(this.LefthalfTableLayout);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.MinimumSize = new System.Drawing.Size(620, 480);
+            this.MinimumSize = new System.Drawing.Size(789, 500);
             this.Name = "Main_Form";
             this.Text = "ContactsApp";
             this.Load += new System.EventHandler(this.Main_Form_Load);
