@@ -9,7 +9,7 @@ namespace ContactsApps
     /// <summary>
     /// Класс, содержащий 6 полей: фамилия, имя, номер тел, дата рождения, mail, IDвк
     /// </summary>
-    public class Contact
+    public class Contact : IComparable<Contact>
     {
         private string _lastname;
         private string _name;
@@ -125,7 +125,11 @@ namespace ContactsApps
         {
             var name = Name;
             var lastname = Lastname;
-            return name + " " + lastname;
+            return lastname + " " + name;
+        }
+        public int CompareTo(Contact comparedObj)
+        {
+            return this.Lastname.CompareTo(comparedObj.Lastname);
         }
     }
 }

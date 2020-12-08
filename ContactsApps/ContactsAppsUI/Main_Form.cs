@@ -16,6 +16,8 @@ namespace ContactsAppsUI
 
     public partial class Main_Form : Form
     {
+        public BindingList<Contact> _remeberlist;
+    
         public Project project;
         private BindingList<Contact> _formlist;
         public string _filename = "ContactsApp.txt";
@@ -51,6 +53,7 @@ namespace ContactsAppsUI
         }
         private void RefreshContactInfo()
         {
+            
             if (_formlist.Count != 0)
             {
                 var index = ContactsListBox.SelectedIndex;
@@ -69,6 +72,8 @@ namespace ContactsAppsUI
 
                 EmailTextBox.Text = _selectedContact.Email;
                 VKidTextBox.Text = _selectedContact.VKid;
+                
+              
             }
             else
             {
@@ -93,13 +98,17 @@ namespace ContactsAppsUI
         {
             if (File.Exists(_filepath + @"\" + _filename))
             {
-                _formlist = new BindingList<Contact>(ProjectManager.LoadFromFile(_filepath + @"\" + _filename)._contactlist);
+                project = ProjectManager.LoadFromFile(_filepath + @"\" + _filename);
+                _formlist = new BindingList<Contact>(project._contactlist);
             }
             else
             {
+                project = new Project();
                 _formlist = new BindingList<Contact>();
             }
+         
             ContactsListBox.DataSource = _formlist;
+            CheckForBirthday();
         }
 
         private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
@@ -124,6 +133,7 @@ namespace ContactsAppsUI
             {
                 _formlist.Add(_editForm._current);
                 _editForm.Close();
+                SortContactsListBox();
                 RefreshContactInfo();
             }
         }
@@ -133,7 +143,8 @@ namespace ContactsAppsUI
                 if (MessageBox.Show("Вы действительно хотите удалить данный контакнт?","Подтверждение",MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     _formlist.Remove((Contact)ContactsListBox.SelectedItem);
-                    RefreshContactInfo();
+                SortContactsListBox();
+                RefreshContactInfo();
                 }
         }
 
@@ -151,7 +162,8 @@ namespace ContactsAppsUI
                 _formlist[ContactsListBox.SelectedIndex] = _editform._current;
                 _editform.Close();
             }
-           RefreshContactInfo();
+            SortContactsListBox();
+            RefreshContactInfo();
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -179,6 +191,67 @@ namespace ContactsAppsUI
         private void saveToToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void SortContactsListBox()
+        {
+            var contactList = _formlist.ToList();
+            contactList.Sort();
+            _formlist = new BindingList<Contact>(contactList);
+            //_formlist.ToList().Sort();
+            ContactsListBox.DataSource = _formlist;
+        }
+        private void FindContactTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                if (FindContactTextBox.Text != string.Empty)
+                {
+                    var findString = FindContactTextBox.Text;
+                    project._contactlist = _formlist.ToList();
+                    var searchlist = project.FindName(findString);
+                    _formlist = new BindingList<Contact>(searchlist);
+                    SortContactsListBox();
+                }
+                else
+                {
+                    _formlist = new BindingList<Contact>(project._contactlist);
+                    SortContactsListBox();
+                }
+            }
+        }
+        private void CheckForBirthday()
+        {
+            var birthdayBoys = project.BirthdayBoy(DateTime.Today);
+            var labelText = "";
+            if (birthdayBoys.Count != 0)
+            {
+                labelText = @"Сегодня день рождения:  " + "\r\n";
+                foreach (var birthdayBoy in birthdayBoys)
+                {
+                    labelText += $@"{birthdayBoy.Name}{birthdayBoy.Lastname} " + "\r\n";
+                }
+            }
+            else
+            {
+                labelText = @"Сегодня именинников нет.";
+            }
+
+            BirthdateBoyLabel.Text = labelText;
+        }
+        private void ContactsListBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                DeleteContactButton_Click(null, null);
+            }
+        }
+
+        private void Main_Form_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ProjectManager.SaveToFile(project, (_filepath + @"\" + _filename));
         }
     }
 }

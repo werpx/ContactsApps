@@ -14,13 +14,15 @@ namespace ContactsAppUnitTests
         {
             _contact = new Contact();
         }
-
-        [Test(Description = "Тест геттера Lastname")]
+        // Description: Описание теста
+        [Test(Description = "Тест геттера Lastname")] 
         public void TestLastnameGet_CorrectValue()
         {
+            //Setup: Подготовка объекта к тестированию и Testing: Вызов тестируемого метода
             var expected = "Смирнов";
             _contact.Lastname = expected;
             var actual = _contact.Lastname;
+            //Assert: Сравнение результата
             Assert.AreEqual(expected, actual, "Геттер Lastname возвращает неправильную фамилию");
         }
 
@@ -37,7 +39,7 @@ namespace ContactsAppUnitTests
         public void TestLastnameSet_UnCorrectValue()
         {
             var wronglastname = "СмиРНоввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввввв";
-            _contact.Lastname = wronglastname;
+            //_contact.Lastname = wronglastname;
             Assert.Throws<ArgumentException>(()=> { _contact.Lastname = wronglastname; }, "должно возникать исключение, если фамилия длиннее 50 символов");
         }
         /*====================================================================================================*/
@@ -64,7 +66,7 @@ namespace ContactsAppUnitTests
         public void TestNameSet_UnCorrectValue()
         {
             string wrongname = "имяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяя";
-            _contact.Name = wrongname;
+            //_contact.Name = wrongname;
             Assert.Throws<ArgumentException>(() => { _contact.Name = wrongname; }, "должно возникать исключение, если имя длиннее 50 символов");
         }
         /*====================================================================================================*/
@@ -113,7 +115,7 @@ namespace ContactsAppUnitTests
         public void TestBirthdateSet_TooLowValue()
         {
             var wrongbirthdate = new DateTime(1000, 10, 16);
-            _contact.Birthdate = wrongbirthdate;
+        //    _contact.Birthdate = wrongbirthdate;
             Assert.Throws<ArgumentException>(() => { _contact.Birthdate = wrongbirthdate;  }, "должно возникать исключение, если год раньше 1900");
         }
 
@@ -121,7 +123,7 @@ namespace ContactsAppUnitTests
         public void TestBirthdateSet_TooBigValue()
         {
             var wrongbirthdate = new DateTime(3000, 10, 16);
-            _contact.Birthdate = wrongbirthdate;
+           // _contact.Birthdate = wrongbirthdate;
             Assert.Throws<ArgumentException>(() => { _contact.Birthdate = wrongbirthdate; }, "должно возникать исключение, если введеная дата больше текущей");
         }
         /*====================================================================================================*/
@@ -148,7 +150,7 @@ namespace ContactsAppUnitTests
         public void TestEmailSet_UnCorrectValue()
         {
             var wrongemail = "kek@mail.ruuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu";
-            _contact.Email = wrongemail;
+           // _contact.Email = wrongemail;
             Assert.Throws<ArgumentException>(() => { _contact.Email = wrongemail; }, "должно возникать исключение, если почта длиннее 50 символов");
         }
         /*====================================================================================================*/
@@ -175,7 +177,7 @@ namespace ContactsAppUnitTests
         public void TestVKidSet_UnCorrectValue()
         {
             var wrongevkid = "123123123123123123123123123123123123";
-            _contact.VKid = wrongevkid;
+          //  _contact.VKid = wrongevkid;
             Assert.Throws<ArgumentException>(() => { _contact.VKid = wrongevkid; }, "должно возникать исключение, если вк-айди длиннее 15 символов");
         }
     }

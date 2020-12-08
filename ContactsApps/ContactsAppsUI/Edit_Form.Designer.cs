@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.ContactDataTableLayout = new System.Windows.Forms.TableLayoutPanel();
+            this.MaskedPhoneTextBox = new System.Windows.Forms.MaskedTextBox();
             this.VKidTextBox = new System.Windows.Forms.TextBox();
             this.EmailTextBox = new System.Windows.Forms.TextBox();
             this.NameTextBox = new System.Windows.Forms.TextBox();
@@ -42,14 +43,13 @@
             this.BirthdateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.AcceptButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
-            this.MaskedPhoneTextBox = new System.Windows.Forms.MaskedTextBox();
             this.ContactDataTableLayout.SuspendLayout();
             this.SuspendLayout();
             // 
             // ContactDataTableLayout
             // 
-            this.ContactDataTableLayout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.ContactDataTableLayout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ContactDataTableLayout.ColumnCount = 2;
             this.ContactDataTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24F));
             this.ContactDataTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76F));
@@ -78,9 +78,18 @@
             this.ContactDataTableLayout.Size = new System.Drawing.Size(460, 201);
             this.ContactDataTableLayout.TabIndex = 9;
             // 
+            // MaskedPhoneTextBox
+            // 
+            this.MaskedPhoneTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.MaskedPhoneTextBox.Location = new System.Drawing.Point(113, 105);
+            this.MaskedPhoneTextBox.Mask = "+70000000000";
+            this.MaskedPhoneTextBox.Name = "MaskedPhoneTextBox";
+            this.MaskedPhoneTextBox.Size = new System.Drawing.Size(344, 20);
+            this.MaskedPhoneTextBox.TabIndex = 14;
+            // 
             // VKidTextBox
             // 
-            this.VKidTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.VKidTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.VKidTextBox.Location = new System.Drawing.Point(113, 173);
             this.VKidTextBox.Name = "VKidTextBox";
             this.VKidTextBox.Size = new System.Drawing.Size(344, 20);
@@ -89,7 +98,7 @@
             // 
             // EmailTextBox
             // 
-            this.EmailTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.EmailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.EmailTextBox.Location = new System.Drawing.Point(113, 138);
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(344, 20);
@@ -97,7 +106,7 @@
             // 
             // NameTextBox
             // 
-            this.NameTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.NameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.NameTextBox.Location = new System.Drawing.Point(113, 39);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(344, 20);
@@ -106,7 +115,7 @@
             // 
             // LastnameTextBox
             // 
-            this.LastnameTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.LastnameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.LastnameTextBox.Location = new System.Drawing.Point(113, 6);
             this.LastnameTextBox.Name = "LastnameTextBox";
             this.LastnameTextBox.Size = new System.Drawing.Size(344, 20);
@@ -206,15 +215,6 @@
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
-            // 
-            // MaskedPhoneTextBox
-            // 
-            this.MaskedPhoneTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.MaskedPhoneTextBox.Location = new System.Drawing.Point(113, 105);
-            this.MaskedPhoneTextBox.Mask = "+70000000000";
-            this.MaskedPhoneTextBox.Name = "MaskedPhoneTextBox";
-            this.MaskedPhoneTextBox.Size = new System.Drawing.Size(344, 20);
-            this.MaskedPhoneTextBox.TabIndex = 14;
             // 
             // Edit_Form
             // 

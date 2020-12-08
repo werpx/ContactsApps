@@ -120,11 +120,14 @@
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="backgroundWorker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>132, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="AddContactButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABYAAAAVCAYAAABCIB6VAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABVSURBVEhLY/hPBGCoZ0DBxIBRg+Fg1GA4oK3BzPXMGJrJ
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAABVSURBVEhLY/hPBGCoZ0DBxIBRg+Fg1GA4oK3BzPXMGJrJ
         xl0QixluvL2BXQEFGGwwmMAiSQlGGNyHXQE5mKmOCWEwIYCumRgwajAcjBoMB0PN4P//AeqIv//jWEPH
         AAAAAElFTkSuQmCC
 </value>
@@ -153,9 +156,6 @@
         AYW0szCfps7/SEDhZnY5PNAsUXE9E5KmaYh5447gNCyjL9NAKV+k+OfbGRKXZAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="backgroundWorker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>132, 17</value>
-  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
   </metadata>
